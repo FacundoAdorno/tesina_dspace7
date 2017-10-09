@@ -7,6 +7,10 @@
  */
 package org.dspace.app.rest.model.hateoas;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
+import org.dspace.app.rest.BitstreamFacuController;
 import org.dspace.app.rest.model.BitstreamRest;
 import org.dspace.app.rest.utils.Utils;
 
@@ -22,5 +26,6 @@ public class BitstreamResource extends DSpaceResource<BitstreamRest> {
 	public BitstreamResource(BitstreamRest bs, Utils utils, String... rels) {
 		super(bs, utils, rels);
 		add(utils.linkToSubResource(bs, "content"));
+		add(linkTo(methodOn(BitstreamFacuController.class).filterByBundleName("ORIGINAL")).withRel("filterByBundleName"));
 	}
 }

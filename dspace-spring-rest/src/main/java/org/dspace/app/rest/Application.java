@@ -184,6 +184,8 @@ public class Application extends SpringBootServletInitializer
                 String[] corsAllowedOrigins = configuration.getCorsAllowedOrigins();
                 if (corsAllowedOrigins != null) {
                 	registry.addMapping("/api/**").allowedOrigins(corsAllowedOrigins);
+                	//TODO eliminar -- prueba
+//                	registry.addMapping("/api_facu/**").allowedOrigins(corsAllowedOrigins);
                 }
             }
         };

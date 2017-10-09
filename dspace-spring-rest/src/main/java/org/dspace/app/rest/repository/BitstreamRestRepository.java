@@ -20,6 +20,7 @@ import org.dspace.app.rest.model.BitstreamRest;
 import org.dspace.app.rest.model.hateoas.BitstreamResource;
 import org.dspace.authorize.AuthorizeException;
 import org.dspace.content.Bitstream;
+import org.dspace.content.Bundle;
 import org.dspace.content.factory.ContentServiceFactory;
 import org.dspace.content.service.BitstreamService;
 import org.dspace.core.Context;
@@ -70,6 +71,30 @@ public class BitstreamRestRepository extends DSpaceRestRepository<BitstreamRest,
 			it = bs.findAll(context, pageable.getPageSize(), pageable.getOffset());
 			while(it.hasNext()) {
 				bit.add(it.next());
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
+		Page<BitstreamRest> page = new PageImpl<Bitstream>(bit, pageable, total).map(converter);
+		return page;
+	}
+	
+	public Page<BitstreamRest> findAllByBundle(Pageable pageable, String bundleName) {
+		Context context = obtainContext();
+		List<Bitstream> bit = new ArrayList<Bitstream>();
+		Iterator<Bitstream> it = null;
+		int total = 0;
+		try {
+			total = bs.countTotal(context);
+			//TODO: poner lógica para encontrar por nombre de bundle
+			it = bs.findAll(context, pageable.getPageSize(), pageable.getOffset());
+			while(it.hasNext()) {
+				Bitstream bitstream = it.next();
+				for (Bundle bundle : bitstream.getBundles()) {					
+					if(bundle.getName().equals(bundleName)) {					
+						bit.add(bitstream);
+					}
+				}
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage(), e);
