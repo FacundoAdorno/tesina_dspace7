@@ -115,5 +115,9 @@
     <bean class="org.dspace.xmlworkflow.XmlWorkflowServiceImpl"/>
     <bean class="org.dspace.xmlworkflow.WorkflowRequirementsServiceImpl"/>
     <bean class="org.dspace.xmlworkflow.XmlWorkflowFactoryImpl"/>-->
+    
+    
+    <!-- StatisticReporter -->
+    <bean class="org.dspace.app.statistic_reporter.service.StatisticReporterServiceImpl" />
 
 </beans>
