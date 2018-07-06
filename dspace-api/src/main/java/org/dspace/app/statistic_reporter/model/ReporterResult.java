@@ -5,17 +5,19 @@
  *
  * http://www.dspace.org/license/
  */
-package org.dspace.app.statistics.model;
+package org.dspace.app.statistic_reporter.model;
 
-public class Reporter {
-	private String name = "Hello";
+public class ReporterResult {
 	
+	private String result;
 
-	public void setName(String name) {
-		this.name =  name;
+	public ReporterResult(String result) {
+		this.result = result;
 	}
 	
-	public String getName() {
-		return this.name;
+	public String getResult() {
+		return result;
 	}
+	
+	
 }

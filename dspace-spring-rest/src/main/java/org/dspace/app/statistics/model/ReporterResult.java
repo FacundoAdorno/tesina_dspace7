@@ -7,15 +7,15 @@
  */
 package org.dspace.app.statistics.model;
 
-public class Reporter {
-	private String name = "Hello";
-	
+public class ReporterResult {
+	private String result;
 
-	public void setName(String name) {
-		this.name =  name;
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 	
-	public String getName() {
-		return this.name;
-	}
 }

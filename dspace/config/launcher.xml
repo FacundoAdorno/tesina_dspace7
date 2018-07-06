@@ -373,4 +373,11 @@
             <class>org.dspace.app.util.Version</class>
         </step>
     </command>
+    <command>
+    	<name>prueba_solr</name>
+    	<description>Probando modelo de Discovery</description>
+    	<step>
+    		<class>org.dspace.discovery.facu_tests.Pruebas_Discovery</class>
+    	</step>
+    </command>
 </commands>

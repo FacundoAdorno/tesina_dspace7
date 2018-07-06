@@ -1,0 +1,95 @@
+{
+  "scope": {
+    "options": [
+        {
+        	"id"		: "bitstr_scp",
+        	"label"		: "Bitstream",
+            "solrQuery": "search.resource_type:0",
+            "metadataSets_ref": [
+            	"allMetadata"
+            ]
+        },
+        {
+        	"name"		: "Item",
+        	"id"		: "item_scp",
+            "solrQuery": "search.resource_type:2",
+            "metadataSets_ref": [
+            	"allMetadata"
+            ]
+        },
+        {
+        	"name"		: "Collection",
+        	"id"		: "coll_scp",
+            "solrQuery": "search.resource_type:3",
+            "metadataSets_ref": [
+            	"allMetadata"
+            ]
+        },
+        {
+        	"name"		: "Community",
+        	"id"		: "comm_scp",
+            "solrQuery": "search.resource_type:4",
+            "solrCore"	: "search_core",
+            "metadataSets_ref": [
+            	"allMetadata"
+            ]
+        }
+    ],
+    "implementingClasses": [
+      {
+        "default": "org.dspace.app.statistic_reporter.model.ContextDefinition"
+      },
+      {
+      	"ESTO LO SACO": "SI, queda para idea a futuro....",
+        "custom": "org.my.custom.implementing.class"
+      }
+    ]
+  },
+  "metadataSets": [
+    {
+    	"id" : "allMetadata",
+      	"metadata_def": ["*"],
+      	"operators_ref": "defaultOperators"
+    },
+    {
+    	"id" : "reducedMtd",
+      	"metadata_def": [
+	        "dc.title",
+	        "dc.type"
+      	],
+      	"operators_ref" : "defaultOperators"
+    }
+  ],
+  "operatorSets": [
+    [
+      {
+     	"id": "defaultOperators",
+     	"operators":[
+     		{
+     			"id": "eq_op",
+		        "label": "equal",
+		        "symbol": "=",
+		        "sorlQuery": "<placeholder>"
+     		},
+     		{
+     			"id": "startsWith_op",
+		        "label": "Starts With",
+		        "symbol": "",
+		        "sorlQuery": "/<placeholder>.*/"
+     		}
+     	] 	
+      }
+    ]
+  ],
+  "solrCores": [
+    {
+  	"id": "searchCore",
+        "pathName": "search",
+        "defaultCore": true
+    },
+    {
+        "id": "statisticsCore",
+        "pathName": "statistics"
+    }
+  ]
+}

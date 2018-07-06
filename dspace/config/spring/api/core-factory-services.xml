@@ -14,7 +14,7 @@
     <bean id="sfxServiceFactory" class="org.dspace.app.sfx.factory.SfxServiceFactoryImpl"/>
     <bean id="appUtilServiceFactory" class="org.dspace.app.util.factory.UtilServiceFactoryImpl"/>
     <!-- StatisticsReporter -->
-    <bean id="statisticReporterServiceFactory" class="org.dspace.app.statistic_reporter.service.factory.StatisticReporterServiceFactoryImpl" />
+    <bean id="statisticReporterServiceFactory" class="org.dspace.app.statistic_reporter.service.factory.StatisticReporterServiceFactoryImpl"/>
 
     <bean id="authenticateServiceFactory" class="org.dspace.authenticate.factory.AuthenticateServiceFactoryImpl"/>
 

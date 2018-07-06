@@ -118,6 +118,10 @@
     
     
     <!-- StatisticReporter -->
-    <bean class="org.dspace.app.statistic_reporter.service.StatisticReporterServiceImpl" />
+    <bean id="statisticReporterService" class="org.dspace.app.statistic_reporter.service.StatisticReporterServiceImpl"/>
+    
+    <bean id="statisticConfigurationService" class="org.dspace.app.statistic_reporter.service.DefaultConfigurationLoaderServiceImpl" />
+
+	<bean id="queryResolverService" class="org.dspace.app.statistic_reporter.service.QueryResolverServiceImpl" />
 
 </beans>
