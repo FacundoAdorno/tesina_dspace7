@@ -29,7 +29,7 @@
         <jena.version>2.13.0</jena.version>
         <slf4j.version>1.7.22</slf4j.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
-        <spring.version>4.3.6.RELEASE</spring.version>
+        <spring.version>5.3.19</spring.version>
         <!-- 'root.basedir' is the path to the root [dspace-src] dir. It must be redefined by each child POM,
              as it is used to reference the LICENSE_HEADER and *.properties file(s) in that directory. -->
         <root.basedir>${basedir}</root.basedir>
